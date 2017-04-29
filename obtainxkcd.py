@@ -22,13 +22,13 @@ for link in get_html("http://xkcd.com/archive/").find_all('a'):
 for x in range(0,len(elenco_siti)):
     if "." not in elenco_siti[x]:
         elenco_siti_corretto.append(elenco_siti[x])
-i=0
 try:
+ i=0
  for x in range(3,len(elenco_siti_corretto)):
   for link in get_html("http://xkcd.com"+elenco_siti_corretto[x]).find_all('img'):
      immagini.append(link.get('src'))
      if (i==0):
-      print(str(x)+"/"+str(len(elenco_siti_corretto)))
+      print(str(round((x*100)/(len(elenco_siti_corretto)),2))+'%')
       i=i+2
      else:
       i=i-1
