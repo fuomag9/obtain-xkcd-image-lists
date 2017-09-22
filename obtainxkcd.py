@@ -1,11 +1,6 @@
-import requests
-import base64
 import os
 import urllib.request
-import mmap
 import os.path
-from os import listdir
-from os.path import isfile, join
 from bs4 import BeautifulSoup
 def get_html(website):
    req = urllib.request.Request(website, headers={'User-Agent': 'Mozilla/5.0'})
